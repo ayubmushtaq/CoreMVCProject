@@ -9,5 +9,6 @@ namespace CoreMVCProject.Models.ViewModels
     public class CartVM
     {
         public IEnumerable<Cart> Carts { get; set; }
+        public double Total { get; set; }
     }
 }

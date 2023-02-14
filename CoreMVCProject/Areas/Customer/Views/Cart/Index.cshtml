@@ -29,46 +29,41 @@
                                 </div>
                                 <div class="col-md-3 col-lg-3 col-xl-3">
                                     <p class="lead fw-normal mb-2">@item.Product.Name</p>
-                                    <p><span class="text-muted">Size: </span>M <span class="text-muted">Color: </span>Grey</p>
+                                    <p><span class="text-muted">@Html.Raw(item.Product.Description)</span></p>
                                 </div>
                                 <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                                    <button class="btn btn-link px-2"
-                                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                                        <i class="fas fa-minus"></i>
-                                    </button>
-
-                                    <input id="form1" min="0" name="quantity" value="2" type="number"
+                                    <a class="btn btn-link px-2"
+                                   asp-action="RemoveItemFromCart" asp-route-id="@item.CartId">
+                                        <i class="bi bi-dash"></i>
+                                    </a>
+                                    <input id="form1" min="0" name="quantity" value="@item.Count" type="text"
                                        class="form-control form-control-sm" />
+                                    <a class="btn btn-link px-2"
+                                   asp-action="AddItemInCart" asp-route-id="@item.CartId">
+                                        <i class="bi bi-plus"></i>
+                                    </a>
 
-                                    <button class="btn btn-link px-2"
-                                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                                        <i class="fas fa-plus"></i>
-                                    </button>
                                 </div>
                                 <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
                                     <h5 class="mb-0">$@item.Product.Price.ToString("0.00")</h5>
                                 </div>
                                 <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                                    <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
+                                    <a class="text-danger" asp-action="DeleteCart" asp-route-id="@item.CartId"><i class="bi bi-trash3"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 }
-                <div class="card mb-4">
-                    <div class="card-body p-4 d-flex flex-row">
-                        <div class="form-outline flex-fill">
-                            <input type="text" id="form1" class="form-control form-control-lg" />
-                            <label class="form-label" for="form1">Discound code</label>
-                        </div>
-                        <button type="button" class="btn btn-outline-warning btn-lg ms-3">Apply</button>
-                    </div>
-                </div>
-
                 <div class="card">
                     <div class="card-body">
-                        <button type="button" class="btn btn-warning btn-block btn-lg">Proceed to Pay</button>
+                        <a type="button" class="btn btn-warning btn-block btn-lg" asp-action="Summary">Proceed to Pay</a>
+                        <div class="float-end">
+                            <p class="mb-0 me-5 d-flex align-items-center">
+                                <span class="small text-muted me-2">Order total:</span> <span class="lead fw-normal">@Model.Total.ToString("c")</span>
+                            </p>
+                        </div>
                     </div>
+
                 </div>
 
             </div>

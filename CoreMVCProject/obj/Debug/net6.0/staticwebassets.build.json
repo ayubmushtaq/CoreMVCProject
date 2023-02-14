@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9b4f0hv/BbXsSicuRnwDpuuMcImdWivZTPgPs4iQ8GY=",
+  "Hash": "hErqPZuKi5F7FrHY4GAhcuViNAidSD8u7mXCayf52rk=",
   "Source": "CoreMVCProjectWeb",
   "BasePath": "_content/CoreMVCProjectWeb",
   "Mode": "Default",
@@ -2142,12 +2142,12 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\Ayub Mushtaq\\source\\repos\\CoreMVCProject\\CoreMVCProject\\wwwroot\\ProductImage\\c412b389-9d32-40ad-9a7e-8c7baaf59cb4-AddContact2.png",
+      "Identity": "C:\\Users\\Ayub Mushtaq\\source\\repos\\CoreMVCProject\\CoreMVCProject\\wwwroot\\ProductImage\\50f7478f-b9b2-43f7-90b3-9deb45022440-download.jpg",
       "SourceId": "CoreMVCProjectWeb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Ayub Mushtaq\\source\\repos\\CoreMVCProject\\CoreMVCProject\\wwwroot\\",
       "BasePath": "_content/CoreMVCProjectWeb",
-      "RelativePath": "ProductImage/c412b389-9d32-40ad-9a7e-8c7baaf59cb4-AddContact2.png",
+      "RelativePath": "ProductImage/50f7478f-b9b2-43f7-90b3-9deb45022440-download.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2156,7 +2156,24 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\ProductImage\\c412b389-9d32-40ad-9a7e-8c7baaf59cb4-AddContact2.png"
+      "OriginalItemSpec": "wwwroot\\ProductImage\\50f7478f-b9b2-43f7-90b3-9deb45022440-download.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Ayub Mushtaq\\source\\repos\\CoreMVCProject\\CoreMVCProject\\wwwroot\\ProductImage\\63d83001-2d06-4383-ad78-b312220ff499-photo-1542291026-7eec264c27ff.jpg",
+      "SourceId": "CoreMVCProjectWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ayub Mushtaq\\source\\repos\\CoreMVCProject\\CoreMVCProject\\wwwroot\\",
+      "BasePath": "_content/CoreMVCProjectWeb",
+      "RelativePath": "ProductImage/63d83001-2d06-4383-ad78-b312220ff499-photo-1542291026-7eec264c27ff.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ProductImage\\63d83001-2d06-4383-ad78-b312220ff499-photo-1542291026-7eec264c27ff.jpg"
     }
   ]
 }

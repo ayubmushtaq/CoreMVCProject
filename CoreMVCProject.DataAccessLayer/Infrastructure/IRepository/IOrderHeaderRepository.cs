@@ -7,9 +7,7 @@ using System.Threading.Tasks;
 
 namespace CoreMVCProject.DataAccessLayer.Infrastructure.IRepository
 {
-    public interface ICartRepository : IRepository<Cart>
+    public interface IOrderHeaderRepository : IRepository<OrderHeader>
     {
-        int IncrementCartItem(Cart cart, int count);
-        int DecrementCartItem(Cart cart, int count);
     }
 }

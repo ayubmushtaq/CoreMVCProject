@@ -1024,12 +1024,12 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery\LICENSE.txt))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\ProductImage\c412b389-9d32-40ad-9a7e-8c7baaf59cb4-AddContact2.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\ProductImage\50f7478f-b9b2-43f7-90b3-9deb45022440-download.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>CoreMVCProjectWeb</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/CoreMVCProjectWeb</BasePath>
-      <RelativePath>ProductImage/c412b389-9d32-40ad-9a7e-8c7baaf59cb4-AddContact2.png</RelativePath>
+      <RelativePath>ProductImage/50f7478f-b9b2-43f7-90b3-9deb45022440-download.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -1038,7 +1038,23 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\ProductImage\c412b389-9d32-40ad-9a7e-8c7baaf59cb4-AddContact2.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\ProductImage\50f7478f-b9b2-43f7-90b3-9deb45022440-download.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\ProductImage\63d83001-2d06-4383-ad78-b312220ff499-photo-1542291026-7eec264c27ff.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>CoreMVCProjectWeb</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/CoreMVCProjectWeb</BasePath>
+      <RelativePath>ProductImage/63d83001-2d06-4383-ad78-b312220ff499-photo-1542291026-7eec264c27ff.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\ProductImage\63d83001-2d06-4383-ad78-b312220ff499-photo-1542291026-7eec264c27ff.jpg))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

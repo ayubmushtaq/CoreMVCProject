@@ -5,8 +5,12 @@
       "PackagePath": "staticwebassets\\CoreMVCProjectWeb.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\Ayub Mushtaq\\source\\repos\\CoreMVCProject\\CoreMVCProject\\wwwroot\\ProductImage\\c412b389-9d32-40ad-9a7e-8c7baaf59cb4-AddContact2.png",
-      "PackagePath": "staticwebassets\\ProductImage\\c412b389-9d32-40ad-9a7e-8c7baaf59cb4-AddContact2.png"
+      "Id": "C:\\Users\\Ayub Mushtaq\\source\\repos\\CoreMVCProject\\CoreMVCProject\\wwwroot\\ProductImage\\50f7478f-b9b2-43f7-90b3-9deb45022440-download.jpg",
+      "PackagePath": "staticwebassets\\ProductImage\\50f7478f-b9b2-43f7-90b3-9deb45022440-download.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ayub Mushtaq\\source\\repos\\CoreMVCProject\\CoreMVCProject\\wwwroot\\ProductImage\\63d83001-2d06-4383-ad78-b312220ff499-photo-1542291026-7eec264c27ff.jpg",
+      "PackagePath": "staticwebassets\\ProductImage\\63d83001-2d06-4383-ad78-b312220ff499-photo-1542291026-7eec264c27ff.jpg"
     },
     {
       "Id": "C:\\Users\\Ayub Mushtaq\\source\\repos\\CoreMVCProject\\CoreMVCProject\\wwwroot\\css\\ShoppingCart.css",

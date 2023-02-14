@@ -8,24 +8,17 @@ using System.Threading.Tasks;
 
 namespace CoreMVCProject.DataAccessLayer.Infrastructure.Respository
 {
-    public class CartRepository : Repository<Cart>, ICartRepository
+    public class OrderDetailRepository : Repository<OrderDetail>, IOrderDetailRepository
     {
         private readonly ApplicationDBContext _context;
-        public CartRepository(ApplicationDBContext context) : base(context)
+        public OrderDetailRepository(ApplicationDBContext context) : base(context)
         {
             _context = context;
         }
 
-        public int DecrementCartItem(Cart cart, int count)
+        public void Update(OrderDetail orderDetail)
         {
-            cart.Count -= count;
-            return cart.Count;
-        }
-
-        public int IncrementCartItem(Cart cart, int count)
-        {
-            cart.Count += count;
-            return cart.Count;
+            throw new NotImplementedException();
         }
     }
 }

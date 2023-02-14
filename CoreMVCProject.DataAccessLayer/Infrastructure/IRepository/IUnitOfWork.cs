@@ -12,6 +12,8 @@ namespace CoreMVCProject.DataAccessLayer.Infrastructure.IRepository
         IProductRepository Product { get; }
         IApplicationUser ApplicationUser { get; }
         ICartRepository Cart { get; }
+        IOrderHeaderRepository OrderHeader { get; }
+        IOrderDetailRepository OrderDetail { get; }
         void Save();
     }
 }

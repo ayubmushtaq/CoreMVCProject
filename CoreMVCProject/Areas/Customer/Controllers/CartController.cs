@@ -24,7 +24,43 @@ namespace CoreMVCProjectWeb.Areas.Customer.Controllers
             {
                 Carts = _unitOfWork.Cart.GetAll(x => x.ApplicationUserId == claims.Value, includeProperties: "Product")
             };
+            foreach (var item in vm.Carts)
+            {
+                vm.Total += (item.Product.Price * item.Count);
+            }
             return View(vm);
+        }
+        public IActionResult AddItemInCart(int id)
+        {
+            var cart = _unitOfWork.Cart.GetT(x => x.CartId == id);
+            _unitOfWork.Cart.IncrementCartItem(cart, 1);
+            _unitOfWork.Save();
+            return RedirectToAction(nameof(Index));
+        }
+        public IActionResult RemoveItemFromCart(int id)
+        {
+            var cart = _unitOfWork.Cart.GetT(x => x.CartId == id);
+            if (cart.Count > 1)
+            {
+                _unitOfWork.Cart.DecrementCartItem(cart, 1);
+            }
+            else
+            {
+                _unitOfWork.Cart.Delete(cart);
+            }
+            _unitOfWork.Save();
+            return RedirectToAction(nameof(Index));
+        }
+        public IActionResult DeleteCart(int id)
+        {
+            var cart = _unitOfWork.Cart.GetT(x => x.CartId == id);
+            _unitOfWork.Cart.Delete(cart);
+            _unitOfWork.Save();
+            return RedirectToAction(nameof(Index));
+        }
+        public IActionResult Summary()
+        {
+            return View();
         }
     }
 }
