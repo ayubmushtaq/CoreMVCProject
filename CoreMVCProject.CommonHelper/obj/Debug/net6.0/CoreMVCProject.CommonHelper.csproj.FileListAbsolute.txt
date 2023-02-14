@@ -1,0 +1,12 @@
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.CommonHelper\bin\Debug\net6.0\CoreMVCProject.CommonHelper.deps.json
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.CommonHelper\bin\Debug\net6.0\CoreMVCProject.CommonHelper.dll
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.CommonHelper\bin\Debug\net6.0\CoreMVCProject.CommonHelper.pdb
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.CommonHelper\obj\Debug\net6.0\CoreMVCProject.CommonHelper.csproj.AssemblyReference.cache
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.CommonHelper\obj\Debug\net6.0\CoreMVCProject.CommonHelper.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.CommonHelper\obj\Debug\net6.0\CoreMVCProject.CommonHelper.AssemblyInfoInputs.cache
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.CommonHelper\obj\Debug\net6.0\CoreMVCProject.CommonHelper.AssemblyInfo.cs
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.CommonHelper\obj\Debug\net6.0\CoreMVCProject.CommonHelper.csproj.CoreCompileInputs.cache
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.CommonHelper\obj\Debug\net6.0\CoreMVCProject.CommonHelper.dll
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.CommonHelper\obj\Debug\net6.0\refint\CoreMVCProject.CommonHelper.dll
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.CommonHelper\obj\Debug\net6.0\CoreMVCProject.CommonHelper.pdb
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.CommonHelper\obj\Debug\net6.0\ref\CoreMVCProject.CommonHelper.dll

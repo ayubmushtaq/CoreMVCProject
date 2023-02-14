@@ -1,0 +1,33 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <h2 class="text-primary">Create Category</h2>
+        <hr />
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="row mb-3">
+            <label asp-for="Name"></label>
+            <input type="text" asp-for="Name" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="row mb-3">
+            <label asp-for="DisplayOrder"></label>
+            <input type="text" asp-for="DisplayOrder" />
+            <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+        </div>
+        <input type="submit" class="btn btn-primary" />
+    </div>
+</form>
+<a asp-action="Index" asp-controller="Category">Back to Category</a>
+
+@section scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
+

@@ -1,0 +1,15 @@
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.DataAccessLayer\obj\Debug\net6.0\CoreMVCProject.DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.DataAccessLayer\obj\Debug\net6.0\CoreMVCProject.DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.DataAccessLayer\obj\Debug\net6.0\CoreMVCProject.DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.DataAccessLayer\obj\Debug\net6.0\CoreMVCProject.DataAccessLayer.AssemblyInfo.cs
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.DataAccessLayer\obj\Debug\net6.0\CoreMVCProject.DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.DataAccessLayer\bin\Debug\net6.0\CoreMVCProject.DataAccessLayer.deps.json
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.DataAccessLayer\bin\Debug\net6.0\CoreMVCProject.DataAccessLayer.dll
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.DataAccessLayer\bin\Debug\net6.0\CoreMVCProject.DataAccessLayer.pdb
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.DataAccessLayer\bin\Debug\net6.0\CoreMVCProject.Models.dll
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.DataAccessLayer\bin\Debug\net6.0\CoreMVCProject.Models.pdb
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.DataAccessLayer\obj\Debug\net6.0\CoreMVCProject.DataAccessLayer.csproj.CopyComplete
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.DataAccessLayer\obj\Debug\net6.0\CoreMVCProject.DataAccessLayer.dll
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.DataAccessLayer\obj\Debug\net6.0\refint\CoreMVCProject.DataAccessLayer.dll
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.DataAccessLayer\obj\Debug\net6.0\CoreMVCProject.DataAccessLayer.pdb
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.DataAccessLayer\obj\Debug\net6.0\ref\CoreMVCProject.DataAccessLayer.dll

@@ -1,0 +1,12 @@
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.Model\bin\Debug\net6.0\CoreMVCProject.Models.deps.json
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.Model\bin\Debug\net6.0\CoreMVCProject.Models.dll
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.Model\bin\Debug\net6.0\CoreMVCProject.Models.pdb
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.Model\obj\Debug\net6.0\CoreMVCProject.Models.csproj.AssemblyReference.cache
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.Model\obj\Debug\net6.0\CoreMVCProject.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.Model\obj\Debug\net6.0\CoreMVCProject.Models.AssemblyInfoInputs.cache
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.Model\obj\Debug\net6.0\CoreMVCProject.Models.AssemblyInfo.cs
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.Model\obj\Debug\net6.0\CoreMVCProject.Models.csproj.CoreCompileInputs.cache
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.Model\obj\Debug\net6.0\CoreMVCProject.Models.dll
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.Model\obj\Debug\net6.0\refint\CoreMVCProject.Models.dll
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.Model\obj\Debug\net6.0\CoreMVCProject.Models.pdb
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.Model\obj\Debug\net6.0\ref\CoreMVCProject.Models.dll
