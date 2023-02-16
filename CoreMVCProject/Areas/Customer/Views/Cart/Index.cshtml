@@ -59,7 +59,7 @@
                         <a type="button" class="btn btn-warning btn-block btn-lg" asp-action="Summary">Proceed to Pay</a>
                         <div class="float-end">
                             <p class="mb-0 me-5 d-flex align-items-center">
-                                <span class="small text-muted me-2">Order total:</span> <span class="lead fw-normal">@Model.Total.ToString("c")</span>
+                                <span class="small text-muted me-2">Order total:</span> <span class="lead fw-normal">@Model.OrderHeader.OrderTotal.ToString("c")</span>
                             </p>
                         </div>
                     </div>

@@ -18,7 +18,7 @@ namespace CoreMVCProject.DataAccessLayer.Infrastructure.Respository
 
         public void Update(OrderDetail orderDetail)
         {
-            throw new NotImplementedException();
+            _context.OrderDetails.Update(orderDetail);
         }
     }
 }
