@@ -1,4 +1,6 @@
-﻿using CoreMVCProject.DataAccessLayer.Infrastructure.IRepository;
+﻿using CoreMVCProject.CommonHelper;
+using CoreMVCProject.DataAccessLayer.Infrastructure.IRepository;
+using CoreMVCProject.Models;
 using CoreMVCProject.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -25,7 +27,7 @@ namespace CoreMVCProjectWeb.Areas.Customer.Controllers
                 Carts = _unitOfWork.Cart.GetAll(x => x.ApplicationUserId == claims.Value, includeProperties: "Product"),
                 OrderHeader = new CoreMVCProject.Models.OrderHeader()
             };
-          
+
             foreach (var item in vm.Carts)
             {
                 vm.OrderHeader.OrderTotal += (item.Product.Price * item.Count);
@@ -70,6 +72,7 @@ namespace CoreMVCProjectWeb.Areas.Customer.Controllers
                 OrderHeader = new CoreMVCProject.Models.OrderHeader()
             };
             vm.OrderHeader.ApplicationUser = _unitOfWork.ApplicationUser.GetT(x => x.Id == claims.Value);
+            vm.OrderHeader.ApplicationUserId = claims.Value;
             vm.OrderHeader.Name = vm.OrderHeader.ApplicationUser.Name;
             vm.OrderHeader.Phone = vm.OrderHeader.ApplicationUser.PhoneNumber;
             vm.OrderHeader.City = vm.OrderHeader.ApplicationUser.City;
@@ -79,6 +82,42 @@ namespace CoreMVCProjectWeb.Areas.Customer.Controllers
             foreach (var item in vm.Carts)
             {
                 vm.OrderHeader.OrderTotal += (item.Product.Price * item.Count);
+            }
+            return View(vm);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Summary(CartVM vm)
+        {
+            if (ModelState.IsValid)
+            {
+                var claimsIdentity = (ClaimsIdentity)User.Identity;
+                var claims = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+                vm.Carts = _unitOfWork.Cart.GetAll(x => x.ApplicationUserId == claims.Value, includeProperties: "Product");
+                vm.OrderHeader.OrderStatus = OrderStatus.StatusPending;
+                vm.OrderHeader.PaymentStatus = PaymentStatus.StatusPending;
+                vm.OrderHeader.ApplicationUserId = claims.Value;
+                foreach (var item in vm.Carts)
+                {
+                    vm.OrderHeader.OrderTotal += (item.Product.Price * item.Count);
+                }
+                _unitOfWork.OrderHeader.Add(vm.OrderHeader);
+                _unitOfWork.Save();
+                foreach (var itemDetail in vm.Carts)
+                {
+                    OrderDetail orderDetail = new()
+                    {
+                        ProductId = itemDetail.ProductId,
+                        Price = itemDetail.Product.Price,
+                        OrderHeaderId = vm.OrderHeader.OrderHeaderId,
+                        Count = itemDetail.Count
+                    };
+                    _unitOfWork.OrderDetail.Add(orderDetail);
+                    _unitOfWork.Save();
+                }
+                _unitOfWork.Cart.DeleteRange(vm.Carts);
+                _unitOfWork.Save();
+                return RedirectToAction("Index");
             }
             return View(vm);
         }
