@@ -4,6 +4,7 @@ using CoreMVCProject.Models;
 using CoreMVCProject.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Stripe.Checkout;
 using System.Security.Claims;
 
 namespace CoreMVCProjectWeb.Areas.Customer.Controllers
@@ -120,10 +121,62 @@ namespace CoreMVCProjectWeb.Areas.Customer.Controllers
                 _unitOfWork.OrderDetail.Add(orderDetail);
                 _unitOfWork.Save();
             }
+
+            var domain = "https://localhost:7011/";
+            var options = new SessionCreateOptions
+            {
+                LineItems = new List<SessionLineItemOptions>(),
+                Mode = "payment",
+                SuccessUrl = domain + $"Customer/Cart/OrderSuccess?id={vm.OrderHeader.OrderHeaderId}",
+                CancelUrl = domain + "Customer/Cart/Index",
+            };
+            foreach (var itemCarts in vm.Carts)
+            {
+                var lineItemOptions = new SessionLineItemOptions
+                {
+                    PriceData = new SessionLineItemPriceDataOptions
+                    {
+                        UnitAmount = (long)(itemCarts.Product.Price*100),
+                        Currency = "usd",
+                        ProductData = new SessionLineItemPriceDataProductDataOptions
+                        {
+                            Name = itemCarts.Product.Name,
+                        },
+                    },
+                    Quantity = itemCarts.Count,
+                };
+                options.LineItems.Add(lineItemOptions);
+            }
+            var service = new SessionService();
+            Session session = service.Create(options);
+            _unitOfWork.OrderHeader.PaymentStatus(vm.OrderHeader.OrderHeaderId, session.Id, session.PaymentIntentId);
+            _unitOfWork.Save();
+            Response.Headers.Add("Location", session.Url);
+            return new StatusCodeResult(303);
+
+
+
             _unitOfWork.Cart.DeleteRange(vm.Carts);
             _unitOfWork.Save();
             return RedirectToAction("Index", "Home");
 
+        }
+        public IActionResult OrderSuccess(int id)
+        {
+            var orderHeader = _unitOfWork.OrderHeader.GetT(x => x.OrderHeaderId == id);
+            if (orderHeader != null)
+            {
+                var service = new SessionService();
+                Session session = service.Get(orderHeader.SessionId);
+                if (session.PaymentStatus.ToLower()=="paid")
+                {
+                    _unitOfWork.OrderHeader.UpdateStatus(id, OrderStatus.StatusApproved, PaymentStatus.StatusApproved);
+                }
+                List<Cart> _cart = _unitOfWork.Cart.GetAll(x => x.ApplicationUserId == orderHeader.ApplicationUserId).ToList();
+                _unitOfWork.Cart.DeleteRange(_cart);
+                _unitOfWork.Save();
+            }
+            return View(id);
         }
     }
 }

@@ -11,5 +11,6 @@ namespace CoreMVCProject.DataAccessLayer.Infrastructure.IRepository
     {
         void Update(OrderHeader orderHeader);
         void UpdateStatus(int id,string orderStatus,string? paymentStatus = "");
+        void PaymentStatus(int id, string sessionId, string paymentIntentId);
     }
 }

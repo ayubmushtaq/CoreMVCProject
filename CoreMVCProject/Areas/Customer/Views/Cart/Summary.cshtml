@@ -1,4 +1,6 @@
 ﻿@model CartVM
+@using Microsoft.Extensions.Options
+@inject IOptions<CoreMVCProject.CommonHelper.StripeSettings> Stripe
 @{
     ViewData["Title"] = "Summary";
 }

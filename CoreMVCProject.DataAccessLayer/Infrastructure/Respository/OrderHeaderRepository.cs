@@ -16,6 +16,16 @@ namespace CoreMVCProject.DataAccessLayer.Infrastructure.Respository
             _context = context;
         }
 
+        public void PaymentStatus(int id, string sessionId, string paymentIntentId)
+        {
+            var order = _context.OrderHeaders.FirstOrDefault(x => x.OrderHeaderId == id);
+            if (order != null)
+            {
+                order.PaymentIntentId = paymentIntentId;
+                order.SessionId = sessionId;
+            }
+        }
+
         public void Update(OrderHeader orderHeader)
         {
             _context.OrderHeaders.Update(orderHeader);

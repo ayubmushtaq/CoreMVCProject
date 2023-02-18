@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using CoreMVCProject.CommonHelper;
+using Stripe;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,8 @@ builder.Services.AddDbContext<ApplicationDBContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+//Add service to the Stripe Payment.
+builder.Services.Configure<StripeSettings>(builder.Configuration.GetSection("PaymentSettings"));
 // Add service to the razor pages
 builder.Services.AddRazorPages();
 builder.Services.AddIdentity<IdentityUser,IdentityRole>()
@@ -43,6 +46,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+StripeConfiguration.ApiKey = builder.Configuration.GetSection("PaymentSettings:SecretKey").Get<string>();
 app.UseAuthentication();;
 
 app.UseAuthorization();
