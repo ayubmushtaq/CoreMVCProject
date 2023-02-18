@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Ayub Mushtaq\\source\\repos\\CoreMVCProject\\CoreMVCProject\\wwwroot\\js\\Order.js",
+      "PackagePath": "staticwebassets\\js\\Order.js"
+    },
+    {
       "Id": "C:\\Users\\Ayub Mushtaq\\source\\repos\\CoreMVCProject\\CoreMVCProject\\wwwroot\\js\\Product.js",
       "PackagePath": "staticwebassets\\js\\Product.js"
     },

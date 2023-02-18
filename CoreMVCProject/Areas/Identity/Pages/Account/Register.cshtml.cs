@@ -11,6 +11,7 @@ using System.Text.Encodings.Web;
 using System.Threading;
 using System.Threading.Tasks;
 using CoreMVCProject.CommonHelper;
+using CoreMVCProject.DataAccessLayer.Infrastructure.IRepository;
 using CoreMVCProject.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
@@ -32,6 +33,7 @@ namespace CoreMVCProjectWeb.Areas.Identity.Pages.Account
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly IUnitOfWork _unitOfWork;
 
         public RegisterModel(
             UserManager<IdentityUser> userManager,
@@ -39,7 +41,8 @@ namespace CoreMVCProjectWeb.Areas.Identity.Pages.Account
             SignInManager<IdentityUser> signInManager,
             ILogger<RegisterModel> logger,
             IEmailSender emailSender,
-            RoleManager<IdentityRole> roleManager)
+            RoleManager<IdentityRole> roleManager,
+            IUnitOfWork unitOfWork)
         {
             _userManager = userManager;
             _userStore = userStore;
@@ -48,6 +51,7 @@ namespace CoreMVCProjectWeb.Areas.Identity.Pages.Account
             _logger = logger;
             _emailSender = emailSender;
             _roleManager = roleManager;
+            _unitOfWork = unitOfWork;
         }
 
         /// <summary>
@@ -120,6 +124,18 @@ namespace CoreMVCProjectWeb.Areas.Identity.Pages.Account
                 _roleManager.CreateAsync(new IdentityRole(WebsiteRole.Role_Admin)).GetAwaiter().GetResult();
                 _roleManager.CreateAsync(new IdentityRole(WebsiteRole.Role_User)).GetAwaiter().GetResult();
                 _roleManager.CreateAsync(new IdentityRole(WebsiteRole.Role_Employee)).GetAwaiter().GetResult();
+            }
+            var users = _unitOfWork.ApplicationUser.GetAll();
+            foreach (var user in users)
+            {
+                if (user.Email == "superadmin@sadmin.com")
+                {
+                    _userManager.AddToRoleAsync(user, WebsiteRole.Role_Admin).Wait();
+                }
+                else
+                {
+                    _userManager.AddToRoleAsync(user, WebsiteRole.Role_User).Wait();
+                }
             }
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();

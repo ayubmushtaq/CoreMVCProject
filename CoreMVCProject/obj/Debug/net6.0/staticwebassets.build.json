@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hErqPZuKi5F7FrHY4GAhcuViNAidSD8u7mXCayf52rk=",
+  "Hash": "5oq7TCVOOib1hbCZbgAkcQ1Vr4gTwkHpPp3Y219uFBM=",
   "Source": "CoreMVCProjectWeb",
   "BasePath": "_content/CoreMVCProjectWeb",
   "Mode": "Default",
@@ -1137,6 +1137,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Ayub Mushtaq\\source\\repos\\CoreMVCProject\\CoreMVCProject\\wwwroot\\js\\Order.js",
+      "SourceId": "CoreMVCProjectWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ayub Mushtaq\\source\\repos\\CoreMVCProject\\CoreMVCProject\\wwwroot\\",
+      "BasePath": "_content/CoreMVCProjectWeb",
+      "RelativePath": "js/Order.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Order.js"
     },
     {
       "Identity": "C:\\Users\\Ayub Mushtaq\\source\\repos\\CoreMVCProject\\CoreMVCProject\\wwwroot\\js\\Product.js",

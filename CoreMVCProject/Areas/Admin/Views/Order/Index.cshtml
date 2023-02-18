@@ -1,0 +1,47 @@
+﻿@model OrderVM
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="container p-4">
+    <div class="row">
+        <div class="col-6">
+            <h2 class="text-primary">Orders</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a class="btn btn-primary" asp-controller="Order" asp-action="Index" asp-route-status="pending">
+                <i class="bi bi-plus-circle"></i>&nbsp; Pending
+            </a>
+            <a class="btn btn-primary" asp-controller="Order" asp-action="Index" asp-route-status="approved">
+                <i class="bi bi-plus-circle"></i>&nbsp; Approved
+            </a>
+        </div>
+    </div>
+</div>
+
+<h1>List of Orders</h1>
+<table id="OrderTable" class="table table-bordered table-striped" width="100%">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Phone
+            </th>
+            <th>
+                Order Status
+            </th>
+            <th>
+                Order Total
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+    </thead>
+</table>
+
+@section scripts{
+    <script src="~/js/Order.js"></script>
+}
+
