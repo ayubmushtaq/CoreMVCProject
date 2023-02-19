@@ -21,6 +21,7 @@ namespace CoreMVCProject.DataAccessLayer.Infrastructure.Respository
             var order = _context.OrderHeaders.FirstOrDefault(x => x.OrderHeaderId == id);
             if (order != null)
             {
+                order.DateOfPayment = DateTime.Now;
                 order.PaymentIntentId = paymentIntentId;
                 order.SessionId = sessionId;
             }

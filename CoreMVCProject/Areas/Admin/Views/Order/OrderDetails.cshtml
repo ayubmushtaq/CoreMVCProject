@@ -1,0 +1,130 @@
+﻿@model OrderVM
+@using CoreMVCProject.CommonHelper
+@{
+    ViewData["Title"] = "OrderDetails";
+}
+<form method="post">
+    <input type="hidden" asp-for="OrderHeader.OrderHeaderId" />
+    <div class="row mt-3">
+        <div class="col-6">
+            <div class="row">
+                <h2>Order Detail</h2>
+                <div class="col-12 mb-3">
+                    <p class="textmuted h8">Name</p>
+                    <input class="form-control" type="text" asp-for="OrderHeader.Name" />
+                    @*readonly="@((User.IsInRole(WebsiteRole.Role_Admin) || User.IsInRole(WebsiteRole.Role_Employee)) ? "" : "readonly")"*@
+                    @*disabled="@((User.IsInRole(WebsiteRole.Role_Admin) || User.IsInRole(WebsiteRole.Role_Employee)) ? "" : "disabled")"*@
+                </div>
+                <div class="col-12 mb-3">
+                    <p class="textmuted h8">Phone</p>
+                    <input class="form-control" type="text" asp-for="OrderHeader.Phone">
+                </div>
+                <div class="col-12 mb-3">
+                    <p class="textmuted h8">Address</p>
+                    <input class="form-control" type="text" asp-for="OrderHeader.Address">
+                </div>
+                <div class="col-12 mb-3">
+                    <p class="textmuted h8">City</p>
+                    <input class="form-control" type="text" asp-for="OrderHeader.City">
+                </div>
+                <div class="col-12 mb-3">
+                    <p class="textmuted h8">State</p>
+                    <input class="form-control" type="text" asp-for="OrderHeader.State">
+                </div>
+                <div class="col-12 mb-3">
+                    <p class="textmuted h8">Postal Code</p>
+                    <input class="form-control" type="text" asp-for="OrderHeader.PostalCode">
+                </div>
+                <div class="col-12 mb-3">
+                    <p class="textmuted h8">Email</p>
+                    <input class="form-control" type="text" asp-for="OrderHeader.ApplicationUser.Email">
+                </div>
+                <div class="col-12 mb-3">
+                    <p class="textmuted h8">Order Date</p>
+                    <input class="form-control" type="text" value="OrderHeader.DateOfOrder.ToShortDateString()">
+                </div>
+                <div class="col-12 mb-3">
+                    <p class="textmuted h8">Tracking Number</p>
+                    <input class="form-control" type="text" asp-for="OrderHeader.TrackingNumber">
+                </div>
+                <div class="col-12 mb-3">
+                    <p class="textmuted h8">Carrier</p>
+                    <input class="form-control" type="text" asp-for="OrderHeader.Carrier">
+                </div>
+                <div class="col-12 mb-3">
+                    <p class="textmuted h8">Shipping Date</p>
+                    <input class="form-control" type="text" value="OrderHeader.DateOfShipping.ToShortDateString()">
+                </div>
+                <div class="col-12 mb-3">
+                    <p class="textmuted h8">Session Id</p>
+                    <input class="form-control" type="text" asp-for="OrderHeader.SessionId">
+                </div>
+                <div class="col-12 mb-3">
+                    <p class="textmuted h8">Payment Intent Id</p>
+                    <input class="form-control" type="text" asp-for="OrderHeader.PaymentIntentId">
+                </div>
+                @if (Model.OrderHeader.SessionId != null)
+                {
+                    <div class="col-12 mb-3">
+                        <p class="textmuted h8">Payment Date</p>
+                        <input class="form-control" type="text" value="OrderHeader.DateOfPayment.ToShortDateString()">
+                    </div>
+                }
+                <div class="col-12 mb-3">
+                    <p class="textmuted h8">Payment Status</p>
+                    <input class="form-control" type="text" asp-for="OrderHeader.PaymentStatus">
+                </div>
+                <div class="col-12 mb-3">
+                    <button class="btn btn-Primary" type="submit">Update Order</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    Order Summary
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered table-striped" width="100%">
+                        <thead>
+                            <tr class="">
+                                <th>Product Name</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.OrderDetails)
+                            {
+                                <tr class="">
+                                    <td>@item.Product.Name</td>
+                                    <td>@item.Count</td>
+                                    <td>@item.Price.ToString("c")</td>
+                                    <td>@((item.Price * item.Count).ToString("c"))</td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="4" class="text-end fw-bold">Total Amount: @Model.OrderHeader.OrderTotal.ToString("c")</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    @if (Model.OrderHeader.OrderStatus == OrderStatus.StatusApproved)
+                    {
+                        <button type="submit" class="btn btn-info btn-lg btn-block mb-2">Start Processing</button>
+                    }
+                    @if (Model.OrderHeader.OrderStatus == OrderStatus.StatusInProgress)
+                    {
+                        <button type="submit" class="btn btn-success btn-lg btn-block mb-2">Ship Order</button>
+                    }
+                    @if (Model.OrderHeader.OrderStatus != OrderStatus.StatusRefund || Model.OrderHeader.OrderStatus != OrderStatus.StatusCancelled)
+                    {
+                        <button type="submit" class="btn btn-dark btn-lg btn-block mb-2">Cancel Order</button>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

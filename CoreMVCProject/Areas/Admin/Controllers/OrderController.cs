@@ -1,6 +1,7 @@
 ﻿using CoreMVCProject.CommonHelper;
 using CoreMVCProject.DataAccessLayer.Infrastructure.IRepository;
 using CoreMVCProject.Models;
+using CoreMVCProject.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
@@ -51,7 +52,17 @@ namespace CoreMVCProjectWeb.Areas.Admin.Controllers
         }
         public IActionResult OrderDetails(int id)
         {
-            return View();
+            OrderVM vm = new()
+            {
+                OrderHeader = _unitOfWork.OrderHeader.GetT(x => x.OrderHeaderId == id, includeProperties: "ApplicationUser"),
+                OrderDetails = _unitOfWork.OrderDetail.GetAll(x => x.OrderHeaderId == id, includeProperties: "Product")
+            };
+            return View(vm);
+        }
+        [HttpPost]
+        public IActionResult OrderDetails(OrderVM vm)
+        {
+            return View(vm);
         }
     }
 }

@@ -302,5 +302,4 @@ C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject\bin\Debug\net6.
 C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Embedded.dll
 C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject\bin\Debug\net6.0\CoreMVCProject.CommonHelper.dll
 C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject\bin\Debug\net6.0\CoreMVCProject.CommonHelper.pdb
-C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject\obj\Debug\net6.0\CoreMVCProjectWeb.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject\bin\Debug\net6.0\Stripe.net.dll

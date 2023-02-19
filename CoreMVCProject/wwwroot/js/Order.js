@@ -26,7 +26,7 @@ function OrderTable(status) {
             { "data": "orderStatus" },
             { "data": "orderTotal" },
             {
-                "data": "id", "render": function (data) {
+                "data": "orderHeaderId", "render": function (data) {
                     return `<a href="Order/OrderDetails?id=${data}"><i class="bi bi-pencil-square"></i></a>`
                 }
             }
