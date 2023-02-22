@@ -48,12 +48,15 @@ namespace CoreMVCProjectWeb.Areas.Customer.Controllers
                 if (cartItem == null)
                 {
                     _unitOfWork.Cart.Add(cart);
+                    _unitOfWork.Save();
+                    HttpContext.Session.SetInt32("SessionCarts", _unitOfWork.Cart.GetAll(x => x.ApplicationUserId == claims.Value).Count());
                 }
                 else
                 {
                     _unitOfWork.Cart.IncrementCartItem(cartItem, cart.Count);
+                    _unitOfWork.Save();
                 }
-                _unitOfWork.Save();
+                
             }
             return RedirectToAction("Index");
         }

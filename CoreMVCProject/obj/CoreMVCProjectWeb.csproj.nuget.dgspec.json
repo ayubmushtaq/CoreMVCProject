@@ -43,9 +43,17 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[3.5.0, )"
+            },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
               "version": "[6.0.13, )"
+            },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[3.5.0, )"
             }
           },
           "imports": [
@@ -95,6 +103,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "C:\\Users\\Ayub Mushtaq\\source\\repos\\CoreMVCProject\\CoreMVCProject.CommonHelper\\CoreMVCProject.CommonHelper.csproj": {
+                "projectPath": "C:\\Users\\Ayub Mushtaq\\source\\repos\\CoreMVCProject\\CoreMVCProject.CommonHelper\\CoreMVCProject.CommonHelper.csproj"
+              },
               "C:\\Users\\Ayub Mushtaq\\source\\repos\\CoreMVCProject\\CoreMVCProject.Model\\CoreMVCProject.Models.csproj": {
                 "projectPath": "C:\\Users\\Ayub Mushtaq\\source\\repos\\CoreMVCProject\\CoreMVCProject.Model\\CoreMVCProject.Models.csproj"
               }

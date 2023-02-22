@@ -7,6 +7,12 @@ $(document).ready(function () {
     else if (url.includes("approved")) {
         orderTable = OrderTable("approved");
     }
+    else if (url.includes("underprocess")) {
+        orderTable = OrderTable("underprocess");
+    }
+    else if (url.includes("shipped")) {
+        orderTable = OrderTable("shipped");
+    }
     else {
         orderTable = OrderTable();
     }

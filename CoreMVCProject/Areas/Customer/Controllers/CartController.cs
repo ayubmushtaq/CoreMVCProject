@@ -61,6 +61,7 @@ namespace CoreMVCProjectWeb.Areas.Customer.Controllers
             var cart = _unitOfWork.Cart.GetT(x => x.CartId == id);
             _unitOfWork.Cart.Delete(cart);
             _unitOfWork.Save();
+            HttpContext.Session.SetInt32("SessionCarts", _unitOfWork.Cart.GetAll(x => x.ApplicationUserId == cart.ApplicationUserId).Count());
             return RedirectToAction(nameof(Index));
         }
         public IActionResult Summary()
@@ -151,13 +152,14 @@ namespace CoreMVCProjectWeb.Areas.Customer.Controllers
             Session session = service.Create(options);
             _unitOfWork.OrderHeader.PaymentStatus(vm.OrderHeader.OrderHeaderId, session.Id, session.PaymentIntentId);
             _unitOfWork.Save();
+            _unitOfWork.Cart.DeleteRange(vm.Carts);
+            _unitOfWork.Save();
             Response.Headers.Add("Location", session.Url);
             return new StatusCodeResult(303);
 
 
 
-            _unitOfWork.Cart.DeleteRange(vm.Carts);
-            _unitOfWork.Save();
+           
             return RedirectToAction("Index", "Home");
 
         }
@@ -171,6 +173,7 @@ namespace CoreMVCProjectWeb.Areas.Customer.Controllers
                 if (session.PaymentStatus.ToLower()=="paid")
                 {
                     _unitOfWork.OrderHeader.UpdateStatus(id, OrderStatus.StatusApproved, PaymentStatus.StatusApproved);
+                    _unitOfWork.OrderHeader.PaymentStatus(id, session.Id, session.PaymentIntentId);
                 }
                 List<Cart> _cart = _unitOfWork.Cart.GetAll(x => x.ApplicationUserId == orderHeader.ApplicationUserId).ToList();
                 _unitOfWork.Cart.DeleteRange(_cart);

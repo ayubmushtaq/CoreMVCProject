@@ -13,3 +13,5 @@ C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.DataAccessLayer
 C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.DataAccessLayer\obj\Debug\net6.0\refint\CoreMVCProject.DataAccessLayer.dll
 C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.DataAccessLayer\obj\Debug\net6.0\CoreMVCProject.DataAccessLayer.pdb
 C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.DataAccessLayer\obj\Debug\net6.0\ref\CoreMVCProject.DataAccessLayer.dll
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.DataAccessLayer\bin\Debug\net6.0\CoreMVCProject.CommonHelper.dll
+C:\Users\Ayub Mushtaq\source\repos\CoreMVCProject\CoreMVCProject.DataAccessLayer\bin\Debug\net6.0\CoreMVCProject.CommonHelper.pdb

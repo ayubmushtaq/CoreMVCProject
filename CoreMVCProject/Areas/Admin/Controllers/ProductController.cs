@@ -1,13 +1,16 @@
-﻿using CoreMVCProject.DataAccessLayer;
+﻿using CoreMVCProject.CommonHelper;
+using CoreMVCProject.DataAccessLayer;
 using CoreMVCProject.DataAccessLayer.Infrastructure.IRepository;
 using CoreMVCProject.Models;
 using CoreMVCProject.Models.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace CoreMVCProjectWeb.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = WebsiteRole.Role_Admin)]
     public class ProductController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;

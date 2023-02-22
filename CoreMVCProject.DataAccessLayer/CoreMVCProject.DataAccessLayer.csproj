@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CoreMVCProject.CommonHelper\CoreMVCProject.CommonHelper.csproj" />
     <ProjectReference Include="..\CoreMVCProject.Model\CoreMVCProject.Models.csproj" />
   </ItemGroup>
 
